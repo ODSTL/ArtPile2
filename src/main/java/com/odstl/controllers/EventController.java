@@ -44,7 +44,7 @@ public class EventController {
     public String add(Model model, @ModelAttribute @Valid Event event, Errors errors) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add An Event");
+            model.addAttribute("title", "Add An Exhibit");
             return "event/add";
         }
 
@@ -61,7 +61,7 @@ public class EventController {
 
 
 
-        model.addAttribute("title", "Add artworks to this event: " + event.getName());
+        model.addAttribute("title", "Add artworks to exhibit: " + event.getName());
         model.addAttribute("artworks", event.getArtworks());
         model.addAttribute("eventId" , eventId);
         return "event/view";
