@@ -8,21 +8,21 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${artworks} and ${artworks.size()}">no artworks</p>
+<p th:unless="${artworks} and ${artworks.size()}">Welcome to <b>ArtPile</b>! For best results: add Locations first then add Artworks. Enjoy!</p>
 
 
 <table class="table">
 
     <tr>
-        <th>Name</th>
-        <th>Description</th>
+        <th>Title</th>
+        <th>Medium</th>
         <th>Location</th>
     </tr>
 
     <tr th:each="artwork : ${artworks}">
         <td th:text="${artwork.name}"></td>
         <td th:text="${artwork.description}"></td>
-        <td th:text="${artwork.location}"></td>
+        <td th:text="${artwork.location.name}"></td>
     </tr>
 
 </table>

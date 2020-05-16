@@ -29,7 +29,7 @@ public class LocationController {
 
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayAddCategoryForm(Model model) {
+    public String displayAddLocationForm(Model model) {
         model.addAttribute("title", "Add A Location");
         model.addAttribute(new Location());
 
