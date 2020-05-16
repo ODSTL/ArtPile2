@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -45,6 +46,22 @@ public class LocationController {
         }
 
         locationDao.save(newLocation);
+        return "redirect:";
+    }
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveLocationForm(Model model) {
+        model.addAttribute("locations", locationDao.findAll());
+        model.addAttribute("title", "Remove Location");
+        return "location/remove";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveLocationForm(@RequestParam int[] locationIds) {
+
+        for (int locationId : locationIds) {
+            locationDao.delete(locationId);
+        }
+
         return "redirect:";
     }
 }

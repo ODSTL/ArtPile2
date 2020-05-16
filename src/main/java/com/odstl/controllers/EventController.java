@@ -28,7 +28,7 @@ public class EventController {
 
     @RequestMapping(value = "")
     public String index(Model model) {
-        model.addAttribute("title", "Events");
+        model.addAttribute("title", "Exhibits");
         model.addAttribute("events", eventDao.findAll());
         return "event/index";
     }
@@ -61,7 +61,7 @@ public class EventController {
 
 
 
-        model.addAttribute("title", "add artworks to this event: " + event.getName());
+        model.addAttribute("title", "Add artworks to this event: " + event.getName());
         model.addAttribute("artworks", event.getArtworks());
         model.addAttribute("eventId" , eventId);
         return "event/view";
