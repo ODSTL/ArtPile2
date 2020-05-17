@@ -21,15 +21,20 @@ public class Artwork {
     @Size(min=1, message = "Field must not be empty")
     private String description;
 
+    @NotNull
+    @Size(min=1, message = "Field must not be empty")
+    private String dimension;
+
     @ManyToOne
     private Location location;
 
     @ManyToMany(mappedBy = "artworks")
     private List<Event> events;
 
-    public Artwork(String name, String description) {
+    public Artwork(String name, String description, String size) {
         this.name = name;
         this.description = description;
+        this.dimension = dimension;
     }
 
     public Artwork() { }
@@ -54,6 +59,14 @@ public class Artwork {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(String dimension) {
+        this.dimension = dimension;
     }
 
     public Location getType() { return location; }

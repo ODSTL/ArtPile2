@@ -16,12 +16,14 @@
     <tr>
         <th>Title</th>
         <th>Medium</th>
+        <th>Size</th>
         <th>Location</th>
     </tr>
 
     <tr th:each="artwork : ${artworks}">
         <td th:text="${artwork.name}"></td>
         <td th:text="${artwork.description}"></td>
+        <td th:text="${artwork.dimension}"></td>
         <td th:text="${artwork.location.name}"></td>
     </tr>
 
