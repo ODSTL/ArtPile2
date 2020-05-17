@@ -14,11 +14,11 @@ public class Artwork {
     private int id;
 
     @NotNull
-    @Size(min=3, max=30)
+    @Size(min=3, max=50)
     private String name;
 
     @NotNull
-    @Size(min=1, message = "Description must not be empty")
+    @Size(min=1, message = "Field must not be empty")
     private String description;
 
     @ManyToOne

@@ -16,7 +16,7 @@ public class Event {
     private int id;
 
     @NotNull
-    @Size(min=3, max=30)
+    @Size(min=3, max=50)
     private String name;
 
     @ManyToMany

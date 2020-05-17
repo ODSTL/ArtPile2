@@ -14,7 +14,7 @@ public class Location {
     private int id;
 
     @NotNull
-    @Size(min = 3, max = 30)
+    @Size(min = 3, max = 50)
     private String name;
 
     @OneToMany

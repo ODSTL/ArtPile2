@@ -8,6 +8,9 @@
 
         <nav th:replace="fragments :: navigation"></nav>
 
+        <p th:unless="${events} and ${events.size()}"> Select your artworks that are away on exhibit.</p>
+
+
 
         <table class="table">
 
