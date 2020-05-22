@@ -18,6 +18,10 @@ public class Artwork {
     private String name;
 
     @NotNull
+    @Size(min=1, max=4)
+    private String year;
+
+    @NotNull
     @Size(min=1, message = "Field must not be empty")
     private String description;
 
@@ -41,6 +45,7 @@ public class Artwork {
 
     public Artwork(String name, String description, String dimension, String cost, String price) {
         this.name = name;
+        this.year = year;
         this.description = description;
         this.dimension = dimension;
         this.cost = cost;
@@ -61,6 +66,14 @@ public class Artwork {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getDescription() {

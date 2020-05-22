@@ -15,6 +15,7 @@
 
     <tr>
         <th>Title</th>
+        <th>Year Completed</th>
         <th>Medium</th>
         <th>Size</th>
         <th>Cost</th>
@@ -24,6 +25,7 @@
 
     <tr th:each="artwork : ${artworks}">
         <td th:text="${artwork.name}"></td>
+        <td th:text="${artwork.year}"></td>
         <td th:text="${artwork.description}"></td>
         <td th:text="${artwork.dimension}"></td>
         <td th:text="${artwork.cost}"></td>
