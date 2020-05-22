@@ -14,7 +14,7 @@ public class Artwork {
     private int id;
 
     @NotNull
-    @Size(min=3, max=50)
+    @Size(min=3, max=30)
     private String name;
 
     @NotNull
@@ -25,16 +25,26 @@ public class Artwork {
     @Size(min=1, message = "Field must not be empty")
     private String dimension;
 
+    @NotNull
+    @Size(min=1, max=10, message = "Field must not be empty")
+    private String cost;
+
+    @NotNull
+    @Size(min=1, max=10, message = "Field must not be empty")
+    private String price;
+
     @ManyToOne
     private Location location;
 
     @ManyToMany(mappedBy = "artworks")
     private List<Event> events;
 
-    public Artwork(String name, String description, String size) {
+    public Artwork(String name, String description, String dimension, String cost, String price) {
         this.name = name;
         this.description = description;
         this.dimension = dimension;
+        this.cost = cost;
+        this.price = price;
     }
 
     public Artwork() { }
@@ -67,6 +77,22 @@ public class Artwork {
 
     public void setDimension(String dimension) {
         this.dimension = dimension;
+    }
+
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public Location getType() { return location; }
