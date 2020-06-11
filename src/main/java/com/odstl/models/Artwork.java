@@ -1,6 +1,7 @@
 package com.odstl.models;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Artwork {
     private String name;
 
     @NotNull
-    @Size(min=1, max=4)
+    @Size(min=4, max=4, message = "Use 4 digit year")
     private String year;
 
     @NotNull
@@ -88,9 +89,7 @@ public class Artwork {
         return dimension;
     }
 
-    public void setDimension(String dimension) {
-        this.dimension = dimension;
-    }
+    public void setDimension(String dimension) { this.dimension = dimension; }
 
     public String getCost() {
         return cost;
